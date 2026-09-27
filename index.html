@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10X HUB — Ink & Ember Editorial Design System</title>
+  <meta name="description" content="10X HUB operates as a high-contrast editorial system built on pure black, pure white, and ember red. Resources by designers for designers.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="10X HUB — Ink & Ember Editorial System">
+  <meta property="og:description" content="Get and share resources that let you do better work. High-contrast brutalist design repository.">
+  <meta property="og:image" content="./assets/hero-screenshot.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Wix Madefor Display, Wix Madefor Text, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500&family=Wix+Madefor+Text:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Core Tokens & Styles -->
+  <link rel="stylesheet" href="./CSS Variables.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- STICKY TOP NAVIGATION BAR -->
+  <header class="sticky-top-bar" id="top-bar">
+    <div class="top-bar-inner">
+      <!-- Left: Dot Grid Logo Mark (3x3 grid) & Title -->
+      <a href="#hero" class="brand-anchor" aria-label="10X HUB Home">
+        <div class="dot-grid-mark" title="10X HUB Matrix">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+        <span class="brand-name">10X HUB</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#submit-section" class="nav-link">Submit</a>
+        <a href="#curriculum" class="nav-link">Curriculum</a>
+        <a href="#masterclasses" class="nav-link">Masterclasses</a>
+        <a href="#membership" class="nav-link">Membership</a>
+      </nav>
+
+      <!-- Right Controls: Toggle & Ember Pill CTA -->
+      <div class="top-bar-controls">
+        <div class="toggle-control-wrapper" title="Toggle Grid Mode">
+          <span>GRID</span>
+          <button id="poster-toggle-btn" class="toggle-switch-btn" aria-label="Toggle Grid Spec Mode">
+            <span class="toggle-knob"></span>
+          </button>
+        </div>
+
+        <button class="btn-ember-pill" onclick="openSubmissionModal()">
+          <span>Submit resource</span>
+          <span style="font-size: 14px;">→</span>
+        </button>
+
+        <!-- Mobile Nav Hamburger -->
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Open mobile menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#showcase" class="nav-link">Showcase</a>
+    <a href="#submit-section" class="nav-link">Submit Resource</a>
+    <a href="#curriculum" class="nav-link">Curriculum Vault</a>
+    <a href="#masterclasses" class="nav-link">Masterclasses</a>
+    <a href="#membership" class="nav-link">Membership Protocols</a>
+  </div>
+
+  <main>
+    <!-- HERO SECTION: Obsidian Void (#000000) -->
+    <section class="section-hero" id="hero">
+      <div class="container-full">
+        <!-- Spacer for top fixed bar -->
+      </div>
+
+      <!-- Center Typography Block -->
+      <div class="hero-center-block container-full">
+        <h1 class="hero-display-headline">10X HUB</h1>
+        
+        <!-- Word-Spaced Subtitle: exact replication of archetype -->
+        <div class="hero-word-spaced-subtitle" aria-label="Tagline">
+          <span>Get</span>
+          <span>and</span>
+          <span>share</span>
+          <span>resources</span>
+          <span>that</span>
+          <span>let</span>
+          <span>you</span>
+          <span>do</span>
+          <span>better</span>
+          <span>work</span>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Row: Statement, Telemetry, and Wix Studio Badge -->
+      <div class="container-full">
+        <div class="hero-bottom-grid">
+          <div class="hero-statement">
+            Resources by designers<br>for designers.
+          </div>
+
+          <div class="hero-telemetry">
+            <div class="telemetry-row">
+              <span class="telemetry-dot"></span>
+              <span>CURATED ASSETS:</span>
+              <span class="telemetry-val">1,420+ PRODUCTION FILES</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-dot"></span>
+              <span>NETWORK CADENCE:</span>
+              <span class="telemetry-val">WEEKLY DROPS</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-dot"></span>
+              <span>ACTIVE COHORT:</span>
+              <span class="telemetry-val">9,840 MEMBERS WORLDWIDE</span>
+            </div>
+          </div>
+
+          <div class="hero-badge-wrap">
+            <a href="https://10xdesigners.co" target="_blank" rel="noopener noreferrer" class="attribution-badge" title="Built with Wix Studio">
+              <!-- Wix Studio minimal geometric icon -->
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2" fill="none"></rect>
+                <circle cx="12" cy="12" r="3.5" fill="currentColor"></circle>
+              </svg>
+              <span>Built with <strong>WIX</strong>STUDIO</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWCASE SECTION: The Design Archetype Artifact -->
+    <section class="section-showcase" id="showcase">
+      <div class="container-boxed">
+        <div class="section-header-row">
+          <div>
+            <span class="section-pill-tag">// 01 — ARCHETYPE ARTIFACT</span>
+            <h2 class="section-headline">The Original Poster Canvas</h2>
+          </div>
+          <p class="section-subtitle-text">
+            Inspecting the extracted 10X HUB interface artifact. Built on pure Obsidian black, unweighted 187–298px typography with tight compression (-0.064em), and an Ember Red (#ff1841) interactive focal point.
+          </p>
+        </div>
+
+        <!-- Showcase Browser Frame -->
+        <div class="showcase-frame-container">
+          <div class="showcase-frame-toolbar">
+            <div class="toolbar-dots">
+              <span class="toolbar-dot"></span>
+              <span class="toolbar-dot"></span>
+              <span class="toolbar-dot"></span>
+            </div>
+            <div class="toolbar-title">assets/hero-screenshot.jpg — 1440×900 Viewport Extraction</div>
+            <div class="toolbar-actions">
+              <span style="color:#ff1841;">● INTERACTIVE HOTSPOTS</span>
+            </div>
+          </div>
+
+          <!-- Showcase Viewport with Interactive Pins -->
+          <div class="showcase-viewport">
+            <img src="./assets/hero-screenshot.jpg" alt="10X HUB Original Interface Artifact" class="showcase-img" id="showcase-image">
+
+            <!-- Hotspot Pins -->
+            <button class="hotspot-pin pin-top-controls" data-target="controls" title="Inspect Header Controls">01</button>
+            <button class="hotspot-pin pin-display-type" data-target="headline" title="Inspect Display Typography">02</button>
+            <button class="hotspot-pin pin-subtitle" data-target="subtitle" title="Inspect Word Pacing">03</button>
+            <button class="hotspot-pin pin-tagline" data-target="tagline" title="Inspect Tagline">04</button>
+            <button class="hotspot-pin pin-wix-badge" data-target="badge" title="Inspect Platform Credit">05</button>
+          </div>
+
+          <!-- Hotspot Details Panel & Token Color Swatches -->
+          <div class="hotspot-details-panel">
+            <div>
+              <h3 class="hotspot-info-title" id="hotspot-title">Header Controls & 3×3 Brand Matrix</h3>
+              <p class="hotspot-info-desc" id="hotspot-desc">
+                Features the 9-dot brand mark, a 44px pill-shaped binary toggle switch, and the primary Ember Red (#ff1841) pill CTA button with right-arrow.
+              </p>
+            </div>
+
+            <!-- Token Palette Swatches (Click to copy hex) -->
+            <div>
+              <div style="font-family:var(--font-micro); font-size:11px; color:#949494; margin-bottom:8px; text-align:right;">
+                CLICK TO COPY TOKENS
+              </div>
+              <div class="token-swatches-row">
+                <button class="token-swatch" data-hex="#000000" title="Copy #000000">
+                  <span class="swatch-color-box" style="background-color:#000000;"></span>
+                  <span>Obsidian</span>
+                </button>
+                <button class="token-swatch" data-hex="#ff1841" title="Copy #ff1841">
+                  <span class="swatch-color-box" style="background-color:#ff1841;"></span>
+                  <span>Ember Red</span>
+                </button>
+                <button class="token-swatch" data-hex="#7b0016" title="Copy #7b0016">
+                  <span class="swatch-color-box" style="background-color:#7b0016;"></span>
+                  <span>Bloodline</span>
+                </button>
+                <button class="token-swatch" data-hex="#ffffff" title="Copy #ffffff">
+                  <span class="swatch-color-box" style="background-color:#ffffff;"></span>
+                  <span>Paper White</span>
+                </button>
+                <button class="token-swatch" data-hex="#e8e6e6" title="Copy #e8e6e6">
+                  <span class="swatch-color-box" style="background-color:#e8e6e6;"></span>
+                  <span>Ash</span>
+                </button>
+                <button class="token-swatch" data-hex="#949494" title="Copy #949494">
+                  <span class="swatch-color-box" style="background-color:#949494;"></span>
+                  <span>Steel</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE RED FULL-WIDTH SECTION: Ember Red (#ff1841) -->
+    <!-- Direct implementation of Design.md Section: full-bleed #ff1841 background, black text, 3-column form grid -->
+    <section class="section-ember-red" id="submit-section">
+      <div class="container-boxed">
+        <div>
+          <span class="section-pill-tag">// SUBMIT A RESOURCE</span>
+          <h2 class="section-headline">Submit a Resource to the 10X Hub</h2>
+          <p class="section-subtitle-text">
+            Contribute design systems, component libraries, interaction prototypes, and production tooling with our worldwide network of 9,800+ designers.
+          </p>
+        </div>
+
+        <form id="red-resource-form" class="red-form-grid">
+          <!-- Column 1: Personal Details -->
+          <div class="form-column-block">
+            <div class="form-field-group">
+              <label for="form-name" class="form-field-label">Your Full Name *</label>
+              <input type="text" id="form-name" class="underline-input" placeholder="e.g. Elena Rostova" required>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-email" class="form-field-label">Email Address *</label>
+              <input type="email" id="form-email" class="underline-input" placeholder="elena@studio-nord.design" required>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-handle" class="form-field-label">Portfolio or Social Handle</label>
+              <input type="text" id="form-handle" class="underline-input" placeholder="@rostova_ui">
+            </div>
+          </div>
+
+          <!-- Column 2: Resource Specifications -->
+          <div class="form-column-block">
+            <div class="form-field-group">
+              <label for="form-title" class="form-field-label">Resource Title *</label>
+              <input type="text" id="form-title" class="underline-input" placeholder="e.g. Fluid Variable Typography Engine" required>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-category" class="form-field-label">Discipline / Category</label>
+              <select id="form-category" class="underline-input underline-select">
+                <option value="systems" style="color:#000;">Design Systems & Tokens</option>
+                <option value="typography" style="color:#000;">Typography & Editorial Layout</option>
+                <option value="prototyping" style="color:#000;">Prototyping & Motion</option>
+                <option value="engineering" style="color:#000;">Design Engineering & Code</option>
+                <option value="web" style="color:#000;">Framer & Wix Studio Modules</option>
+                <option value="ai" style="color:#000;">AI Prompt Chains & Workflows</option>
+              </select>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-url" class="form-field-label">Figma / GitHub / Community URL *</label>
+              <input type="url" id="form-url" class="underline-input" placeholder="https://figma.com/@10xhub/resource" required>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-desc" class="form-field-label">Manifesto / Summary</label>
+              <input type="text" id="form-desc" class="underline-input" placeholder="Brief summary of why this resource makes work 10x better...">
+            </div>
+          </div>
+
+          <!-- Column 3: Asset Attachment & Dispatch -->
+          <div class="form-column-block">
+            <div class="form-field-group">
+              <label class="form-field-label">Preview Asset or Spec Sheet</label>
+              <input type="file" id="red-file-input" style="display:none;" accept=".png,.jpg,.jpeg,.svg,.pdf,.fig,.zip">
+              <div class="upload-dropzone" id="red-form-dropzone">
+                <button type="button" class="btn-upload-file">
+                  <span>+</span>
+                  <span>Upload file</span>
+                </button>
+                <span class="dropzone-text" style="font-size:12px; color:rgba(0,0,0,0.65);">
+                  Drag & drop preview spec or click to browse (up to 50MB)
+                </span>
+              </div>
+            </div>
+
+            <div class="form-field-group">
+              <label class="form-field-label">Assign System Tags</label>
+              <div class="tags-cloud-wrap">
+                <button type="button" class="tag-pill-btn selected">#DesignSystems</button>
+                <button type="button" class="tag-pill-btn">#FigmaTokens</button>
+                <button type="button" class="tag-pill-btn">#WebGL</button>
+                <button type="button" class="tag-pill-btn">#Typography</button>
+                <button type="button" class="tag-pill-btn">#WixStudio</button>
+                <button type="button" class="tag-pill-btn">#ReactHooks</button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-red-section">
+              <span>Register Resource to Vault</span>
+              <span>→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CURRICULUM & RESOURCE DIRECTORY: Paper White & Ash -->
+    <section class="section-curriculum" id="curriculum">
+      <div class="container-boxed">
+        <div class="section-header-row">
+          <div>
+            <span class="section-pill-tag">// 02 — RESOURCE CURRICULUM</span>
+            <h2 class="section-headline">The 10X Resource Directory</h2>
+          </div>
+          <p class="section-subtitle-text">
+            Filterable archive of battle-tested design system tokens, production code repos, interaction recipes, and editorial layouts.
+          </p>
+        </div>
+
+        <!-- Filter Bar & Live Search -->
+        <div class="filter-search-bar">
+          <div class="filter-pills-row" role="tablist">
+            <button class="filter-pill active" data-filter="all">All Resources</button>
+            <button class="filter-pill" data-filter="systems">Design Systems</button>
+            <button class="filter-pill" data-filter="prototyping">Prototyping & Motion</button>
+            <button class="filter-pill" data-filter="engineering">Design Engineering</button>
+            <button class="filter-pill" data-filter="typography">Typography</button>
+            <button class="filter-pill" data-filter="web">Framer / Web</button>
+            <button class="filter-pill" data-filter="ai">AI Tooling</button>
+          </div>
+
+          <div class="search-input-wrap">
+            <input type="text" id="resource-search-input" class="search-underline-input" placeholder="Search by name, author, topic...">
+            <span class="search-icon-symbol">⌕</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Resource Grid -->
+        <div class="resource-grid" id="resource-grid">
+          <!-- Rendered dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MASTERCLASSES & WORKSHOPS: Obsidian Void (#000000) -->
+    <section class="section-masterclasses" id="masterclasses">
+      <div class="container-boxed">
+        <div class="section-header-row">
+          <div>
+            <span class="section-pill-tag">// 03 — MASTERCLASSES & INTENSIVES</span>
+            <h2 class="section-headline">Live Directives & Intensives</h2>
+          </div>
+          <p class="section-subtitle-text">
+            Live, project-driven cohorts taught directly by principal practitioners from leading design-led organizations.
+          </p>
+        </div>
+
+        <div class="masterclass-table">
+          <!-- Row 01 -->
+          <div class="masterclass-row">
+            <span class="row-index">01</span>
+            <div class="row-title-block">
+              <h3 class="row-class-title">Brutalist Poster Scale Typography & Web Architecture</h3>
+              <span class="row-class-instructor">By Milo Vance — Principal Designer, Studio Archetype</span>
+            </div>
+            <div class="row-schedule">
+              Oct 14, 2026 • Live Cohort (3 Hours)
+            </div>
+            <div>
+              <span class="row-capacity-pill">
+                <span class="pulse-dot"></span>
+                <span>4 spots left</span>
+              </span>
+            </div>
+            <div>
+              <button class="btn-ember-pill" style="padding:8px 16px; font-size:12px;" onclick="openReserveModal('Brutalist Poster Scale Typography', 'Milo Vance')">
+                Reserve Seat →
+              </button>
+            </div>
+          </div>
+
+          <!-- Row 02 -->
+          <div class="masterclass-row">
+            <span class="row-index">02</span>
+            <div class="row-title-block">
+              <h3 class="row-class-title">Production Design Engineering: From Figma to Vercel</h3>
+              <span class="row-class-instructor">By Sora Takahashi — Staff Design Engineer</span>
+            </div>
+            <div class="row-schedule">
+              Oct 21, 2026 • Live Interactive Coding
+            </div>
+            <div>
+              <span class="row-capacity-pill">
+                <span class="pulse-dot"></span>
+                <span>6 spots left</span>
+              </span>
+            </div>
+            <div>
+              <button class="btn-ember-pill" style="padding:8px 16px; font-size:12px;" onclick="openReserveModal('Production Design Engineering', 'Sora Takahashi')">
+                Reserve Seat →
+              </button>
+            </div>
+          </div>
+
+          <!-- Row 03 -->
+          <div class="masterclass-row">
+            <span class="row-index">03</span>
+            <div class="row-title-block">
+              <h3 class="row-class-title">Micro-interactions, Canvas Shaders & Physics Motion</h3>
+              <span class="row-class-instructor">By David Kelling — Motion Director, ex-Linear</span>
+            </div>
+            <div class="row-schedule">
+              Nov 04, 2026 • Live Deep Dive
+            </div>
+            <div>
+              <span class="row-capacity-pill">
+                <span class="pulse-dot"></span>
+                <span>Almost Full</span>
+              </span>
+            </div>
+            <div>
+              <button class="btn-ember-pill" style="padding:8px 16px; font-size:12px;" onclick="openReserveModal('Micro-interactions & Physics Motion', 'David Kelling')">
+                Reserve Seat →
+              </button>
+            </div>
+          </div>
+
+          <!-- Row 04 -->
+          <div class="masterclass-row">
+            <span class="row-index">04</span>
+            <div class="row-title-block">
+              <h3 class="row-class-title">Enterprise Design Systems Governance & Token Pipelines</h3>
+              <span class="row-class-instructor">By Astrid Lind — Head of Design Operations</span>
+            </div>
+            <div class="row-schedule">
+              Nov 18, 2026 • Architecture Lab
+            </div>
+            <div>
+              <span class="row-capacity-pill">
+                <span class="pulse-dot"></span>
+                <span>Open Enrollment</span>
+              </span>
+            </div>
+            <div>
+              <button class="btn-ember-pill" style="padding:8px 16px; font-size:12px;" onclick="openReserveModal('Design Systems Governance', 'Astrid Lind')">
+                Reserve Seat →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP TIERS: Ash Surface (#e8e6e6) -->
+    <section class="section-membership" id="membership">
+      <div class="container-boxed">
+        <div class="section-header-row">
+          <div>
+            <span class="section-pill-tag" style="color:var(--color-bloodline);">// 04 — MEMBERSHIP PROTOCOLS</span>
+            <h2 class="section-headline">Access Tiers & Community</h2>
+          </div>
+          <p class="section-subtitle-text">
+            Choose your protocol level. Every tier grants direct involvement in the global 10X HUB design community.
+          </p>
+        </div>
+
+        <div class="membership-grid">
+          <!-- Community Tier -->
+          <div class="tier-card">
+            <div class="tier-header-block">
+              <span style="font-family:var(--font-micro); font-size:11px; text-transform:uppercase; color:#777;">TIER // 01</span>
+              <h3 class="tier-name">Community Observer</h3>
+              <div class="tier-price-row">
+                <span class="tier-amount">$0</span>
+                <span class="tier-period">/ forever</span>
+              </div>
+            </div>
+
+            <ul class="tier-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Access to 48 public open-source tools</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Monthly editorial dispatch via email</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Public Discord discussion channels</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Resource submission rights</span>
+              </li>
+            </ul>
+
+            <button class="btn-tier-cta outline" onclick="openReserveModal('Community Tier', '10X Team')">
+              Join Discord Free →
+            </button>
+          </div>
+
+          <!-- Pro Member (Featured) -->
+          <div class="tier-card featured">
+            <span class="featured-pill-badge">Most Popular</span>
+            <div class="tier-header-block">
+              <span style="font-family:var(--font-micro); font-size:11px; text-transform:uppercase; color:var(--color-bloodline);">TIER // 02</span>
+              <h3 class="tier-name">10X Pro Member</h3>
+              <div class="tier-price-row">
+                <span class="tier-amount">$24</span>
+                <span class="tier-period">/ month billed yearly</span>
+              </div>
+            </div>
+
+            <ul class="tier-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Full access to 1,420+ curated Figma systems</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>All bi-weekly live masterclasses & archive</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Private design critique office hours</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Verified 10X Pro registry profile badge</span>
+              </li>
+            </ul>
+
+            <button class="btn-tier-cta filled" onclick="openReserveModal('10X Pro Membership', '10X Lead Mentors')">
+              Activate Pro Access →
+            </button>
+          </div>
+
+          <!-- Studio & Collective -->
+          <div class="tier-card">
+            <div class="tier-header-block">
+              <span style="font-family:var(--font-micro); font-size:11px; text-transform:uppercase; color:#777;">TIER // 03</span>
+              <h3 class="tier-name">Studio Collective</h3>
+              <div class="tier-price-row">
+                <span class="tier-amount">$99</span>
+                <span class="tier-period">/ month (5 seats)</span>
+              </div>
+            </div>
+
+            <ul class="tier-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>All Pro perks for up to 5 designers</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Private Slack / Discord agency channel</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Quarterly 1-on-1 Design System Audit</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>Studio showcase spotlight on homepage</span>
+              </li>
+            </ul>
+
+            <button class="btn-tier-cta outline" onclick="openReserveModal('Studio Collective (5 seats)', '10X Advisory')">
+              Enroll Studio Team →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MASSIVE EDITORIAL CALL TO ACTION: Obsidian Void (#000000) -->
+    <section class="section-editorial-cta">
+      <div class="container-boxed">
+        <h2 class="editorial-cta-headline">SCALE YOUR DESIGN OUTPUT BY 10X.</h2>
+        <p class="editorial-cta-sub">
+          Join 9,800+ designers building modern, high-contrast, scalable digital products.
+        </p>
+        <div class="cta-button-group">
+          <button class="btn-ember-pill" onclick="openSubmissionModal()">
+            <span>Submit Your Resource Now</span>
+            <span>→</span>
+          </button>
+          <a href="#membership" class="btn-ghost-pill">
+            <span>Explore Pro Protocols</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- EDITORIAL FOOTER -->
+  <footer class="site-footer">
+    <div class="container-boxed">
+      <div class="footer-top-grid">
+        <!-- Col 1: Manifesto -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">10X HUB</div>
+          <p class="footer-manifesto">
+            An uncompromising, high-contrast editorial system built on pure Obsidian black, Paper white, and Ember red. Designed for uncompromising creators.
+          </p>
+          <div style="font-family:var(--font-micro); font-size:11px; color:#bebcbc;">
+            PART OF 10X DESIGNERS ECOSYSTEM
+          </div>
+        </div>
+
+        <!-- Col 2: Token Spec Reference -->
+        <div>
+          <div class="footer-col-title">SYSTEM TOKENS</div>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('#ff1841'); showToast('Copied Ember Red: #ff1841')">Ember Red: #ff1841</a></li>
+            <li><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('#000000'); showToast('Copied Obsidian: #000000')">Obsidian: #000000</a></li>
+            <li><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('#ffffff'); showToast('Copied Paper White: #ffffff')">Paper White: #ffffff</a></li>
+            <li><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('#7b0016'); showToast('Copied Bloodline: #7b0016')">Bloodline: #7b0016</a></li>
+            <li><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('#e8e6e6'); showToast('Copied Ash: #e8e6e6')">Ash: #e8e6e6</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <div class="footer-col-title">NAVIGATION</div>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Hero Poster</a></li>
+            <li><a href="#showcase">Artifact Showcase</a></li>
+            <li><a href="#submit-section">Red Section Submission</a></li>
+            <li><a href="#curriculum">Resource Directory</a></li>
+            <li><a href="#masterclasses">Masterclass Intensives</a></li>
+            <li><a href="#membership">Membership Protocols</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <div class="footer-col-title">WEEKLY DISPATCH</div>
+          <div class="footer-newsletter-wrap">
+            <p style="font-size:13px; color:#949494;">Receive new design system drops every Tuesday.</p>
+            <form onsubmit="event.preventDefault(); showToast('Subscribed to Weekly Dispatch!'); this.reset();" style="display:flex; flex-direction:column; gap:10px;">
+              <input type="email" required class="footer-underline-input" placeholder="designer@studio.com">
+              <button type="submit" class="btn-ember-pill" style="align-self:flex-start; padding:8px 16px;">
+                Subscribe →
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Giant Watermark Typography -->
+      <div class="footer-watermark-row">
+        <div class="footer-watermark-text">10X HUB</div>
+      </div>
+
+      <!-- Bottom Metadata & Attribution -->
+      <div class="footer-bottom-meta-row">
+        <div class="footer-copyright">
+          © 2026 10X HUB. Extracted from <a href="https://10xdesigners.co" target="_blank" rel="noopener noreferrer" style="color:var(--color-ash); text-decoration:underline;">10xdesigners.co</a> via Refero Design.
+        </div>
+        
+        <div>
+          <a href="https://10xdesigners.co" target="_blank" rel="noopener noreferrer" class="attribution-badge">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2" fill="none"></rect>
+              <circle cx="12" cy="12" r="3.5" fill="currentColor"></circle>
+            </svg>
+            <span>Built with <strong>WIX</strong>STUDIO</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE MODAL DIALOG -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-dialog-box">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="modal-body-container">
+        <!-- Injected dynamically by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Interactions -->
+  <script src="./main.js"></script>
+</body>
+</html>
